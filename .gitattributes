@@ -1,0 +1,11 @@
+# Keep media byte-exact. Git normally detects binaries on its own, but being
+# explicit costs nothing and removes any chance of a line-ending rewrite
+# corrupting the soundtrack on checkout.
+*.webm binary
+*.mp3  binary
+*.opus binary
+*.m4a  binary
+
+# The packed single-file build carries megabytes of base64 on one line; there is
+# nothing useful to diff and nothing to normalise.
+neuralis_time.html -text -diff
